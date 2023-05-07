@@ -1,0 +1,15 @@
+.App{
+    display: grid;
+
+    grid-template-areas:
+    "h h"
+    "n content";
+    grid-template-rows: 60px 1fr;
+    grid-auto-columns: 80px 10fr;
+}
+
+.App-content{
+    grid-area: content;
+    background-color: cornsilk;
+}
+

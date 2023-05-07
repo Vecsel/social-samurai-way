@@ -1,0 +1,12 @@
+.content{
+    grid-area: content;
+    background-color: cornsilk;
+    padding: 10px;
+}
+.content img{
+    width: 40px;
+    border-radius: 20px;
+}
+.button {
+    border-radius: 20px
+}
