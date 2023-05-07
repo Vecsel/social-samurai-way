@@ -41,7 +41,7 @@ export const ProfileInfo = (props: ProfileInfoType) => {
                     setEditMode(true)
                 }}/>}
 
-            <ProfileStatusWithHooks status={props.status} profile={props.profile}
+            <ProfileStatusWithHooks  status={props.status} profile={props.profile}
                                     updateProfileStatus={updateProfileStatusHandler}/>
 
         </div>
