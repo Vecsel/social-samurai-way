@@ -122,12 +122,12 @@ export const savePhoto = (photoFile: any): AppThunk => async (dispatch) => {
     }
 }
 
-export const saveProfile = (FormData: any) => async (dispatch: any,getState:any) => {
-    const userId = getState().auth.userId
+export const saveProfile = (userId:string,FormData: any) => async (dispatch: any,getState:any) => {
+    //const userId = getState().auth.userId
     const response = await profileApi.saveProfile(FormData)
 
     if (response.data.resultCode === 0) {
-        dispatch(setUserProfile(userId))
+        dispatch(getProfilePage(userId))
     } else {
         return Promise.reject(response.data.messages[0])
     }
@@ -141,7 +141,7 @@ export type PhotosType = {
 
 export type ContactsType = {
     facebook: string,
-    "website": string,
+    website: string,
     vk: string,
     twitter: string,
     instagram: string,

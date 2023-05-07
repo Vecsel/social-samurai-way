@@ -18,8 +18,8 @@ export const Profile = (props: ProfileType) => {
     const savePhotoCallBack = (photoFile: any) => {
         dispatch(savePhoto(photoFile))
     }
-    const saveProfileCallBack = (FormData: any) => {
-        dispatch(saveProfile(FormData))
+    const saveProfileCallBack = (userId:string,FormData: any) => {
+        dispatch(saveProfile(userId,FormData))
     }
 
     return (
