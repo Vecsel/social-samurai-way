@@ -13,7 +13,7 @@ import {
     toggleIsFetching, toggleFollowingProgress,
     unFollow, usersReducer
 } from "./users-reducer";
-import {authReducer, setAuthUserData} from "./auth-reducer";
+import {authReducer, getCaptchaUrlSuccess, setAuthUserData} from "./auth-reducer";
 import thunk, { ThunkAction, ThunkDispatch } from "redux-thunk"
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import { reducer as formReducer } from 'redux-form'
@@ -35,11 +35,8 @@ export type ActionsTypes = ReturnType<typeof addPostActionCreator> |
     ReturnType<typeof updateStatus>|
     ReturnType<typeof setAuthUserData>|
     ReturnType<typeof initializedSuccess>|
-    ReturnType<typeof savePhotoSuccess>
-
-
-
-
+    ReturnType<typeof savePhotoSuccess>|
+    ReturnType<typeof getCaptchaUrlSuccess>
 
 
 const rootReducer = combineReducers({

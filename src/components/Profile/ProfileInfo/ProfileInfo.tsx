@@ -13,7 +13,7 @@ type ProfileInfoType = {
     status: string
     isOwner: boolean
     savePhoto: (photoFile: any) => void
-    saveProfile: (userId:string,FormData: any) => void
+    saveProfile: (userId: string, FormData: any) => void
 }
 
 export const ProfileInfo = (props: ProfileInfoType) => {
@@ -28,20 +28,21 @@ export const ProfileInfo = (props: ProfileInfoType) => {
             props.savePhoto(e.target.files[0])
         }
     }
-    const onSubmit = (userId:string,formData: any) => {
-        props.saveProfile(userId,formData)
+    const onSubmit = (userId: string, formData: any) => {
+        props.saveProfile(userId, formData)
         setEditMode(false)
+
     }
     return (
         <div>
             <img src={props.profile?.photos.large || userPhoto} className={s.mainPhoto}/>
             {props.isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
             {editMode ? <ProfileDataForm onSubmit={onSubmit} profile={props.profile}/> :
-                <ProfileData profile= {props.profile} isOwner={props.isOwner} onEditMode={() => {
+                <ProfileData profile={props.profile} isOwner={props.isOwner} onEditMode={() => {
                     setEditMode(true)
                 }}/>}
 
-            <ProfileStatusWithHooks  status={props.status} profile={props.profile}
+            <ProfileStatusWithHooks status={props.status} profile={props.profile}
                                     updateProfileStatus={updateProfileStatusHandler}/>
 
         </div>
